@@ -1,0 +1,1080 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* ESTILO GENERAL */
+
+.juego {
+  min-height: 100vh;
+  min-height: 100dvh;
+  background:
+    linear-gradient(
+      rgba(15, 8, 25, 0.55),
+      rgba(15, 8, 25, 0.82)
+    ),
+    url('/imagenes/fondos/fondo-menu.png')
+      center / cover no-repeat fixed;
+  background-color: #120d1b;
+  color: white;
+  font-family: 'Press Start 2P', monospace;
+  position: relative;
+  overflow: hidden;
+}
+
+/* EFECTO DE ESTÁTICA */
+
+.estatica {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+  opacity: 0.15;
+  background: repeating-linear-gradient(
+    transparent 0px,
+    transparent 3px,
+    rgba(255, 255, 255, 0.15) 4px
+  );
+  animation: interferencia 4s infinite;
+}
+
+/* MENÚ PRINCIPAL */
+
+.menu-principal {
+  min-height: 100dvh;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.informacion {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  font-size: 10px;
+  color: #f1b5d5;
+}
+
+.contenido-menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 30px;
+  width: 100%;
+  flex: 1;
+}
+
+/* CHICA PASTEL */
+
+.personajes {
+  position: relative;
+  width: 45%;
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.personajes .chica-inicio {
+  position: relative;
+  width: auto;
+  height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  margin-left: 160px;
+  image-rendering: auto;
+  filter: drop-shadow(0 0 18px #e9a4d4);
+  animation: flotar 4s ease-in-out infinite;
+}
+
+/* TÍTULO */
+
+.contenido-derecho {
+  width: 50%;
+  max-width: 600px;
+  text-align: center;
+}
+
+.titulo p {
+  color: #f5a9d0;
+  font-size: 10px;
+  line-height: 2;
+  letter-spacing: 1px;
+}
+
+.titulo h1 {
+  font-size: clamp(22px, 3.2vw, 46px);
+  line-height: 1.5;
+  color: #f8c8e8;
+  text-shadow:
+    3px 3px 0 #853d79,
+    0 0 18px rgba(255, 150, 220, 0.4);
+  margin: 25px 0;
+}
+
+.titulo span {
+  color: #e0cce8;
+  font-size: 10px;
+  line-height: 2;
+}
+
+/* CINCO BOTONES */
+
+.botones {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.botones button,
+.pantalla-secundaria button {
+  padding: 17px 15px;
+  background: rgba(34, 18, 48, 0.9);
+  border: 2px solid #d18fcf;
+  color: #f9d6ed;
+  font-family: inherit;
+  font-size: 10px;
+  line-height: 1.8;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.botones button:hover,
+.pantalla-secundaria button:hover {
+  background: #a04c88;
+  box-shadow: 0 0 20px #d77cb9;
+  transform: scale(1.03);
+}
+
+button:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 4px;
+}
+
+button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* PIE DE PÁGINA */
+
+.pie {
+  text-align: center;
+  font-size: 8px;
+  color: #d7b3d8;
+  line-height: 2;
+}
+
+/* PANTALLAS SECUNDARIAS */
+
+.pantalla-secundaria {
+  min-height: 100dvh;
+  padding: 70px 25px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  text-align: center;
+  position: relative;
+}
+
+.informacion-interior {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  right: 25px;
+}
+
+.seccion-contenido {
+  width: 100%;
+  max-width: 760px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+.seccion-contenido h2 {
+  color: #f5b8dd;
+  font-size: clamp(19px, 3vw, 34px);
+  line-height: 1.6;
+  text-shadow: 3px 3px #793c72;
+}
+
+.seccion-contenido h3 {
+  color: #ffd1eb;
+  font-size: 14px;
+  line-height: 2;
+}
+
+.seccion-contenido p {
+  color: #e5d5eb;
+  font-size: 10px;
+  line-height: 2.5;
+}
+
+.etiqueta {
+  color: #f5a9d0 !important;
+}
+
+.personaje-seccion {
+  width: 180px;
+  max-width: 80%;
+  max-height: 250px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 18px #d77cb9);
+  animation: flotar 4s infinite;
+}
+
+.boton-especial {
+  background: #753b70 !important;
+}
+
+.volver {
+  margin-top: 20px;
+}
+
+/* NUESTRA AVENTURA */
+
+.tarjeta-recuerdo {
+  background: rgba(38, 20, 52, 0.94);
+  border: 2px solid #d18fcf;
+  padding: 35px 25px;
+  width: 100%;
+  max-width: 550px;
+}
+
+.corazon-grande {
+  font-size: 65px;
+  color: #ff91c8;
+  text-shadow: 0 0 25px #f276b5;
+  animation: latido 2s infinite;
+}
+
+.contador {
+  color: #d29bce !important;
+  font-size: 8px !important;
+}
+
+.controles {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* PLAYLIST */
+
+.lista-canciones {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.disco {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  text-align: left;
+}
+
+.disco.seleccionado {
+  background: #753b70;
+  box-shadow: 0 0 20px #d77cb9;
+}
+
+.vinilo {
+  width: 65px;
+  height: 65px;
+  min-width: 65px;
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      circle,
+      #e88fbe 0 18%,
+      #111 19% 35%,
+      #333 36% 40%,
+      #111 41% 100%
+    );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  color: white;
+}
+
+.datos-cancion {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.datos-cancion strong {
+  font-size: 9px;
+  line-height: 1.8;
+}
+
+.datos-cancion small {
+  color: #d7a8d7;
+  font-size: 8px;
+}
+
+.mensaje-cancion {
+  color: #ffb9df !important;
+}
+
+/* CARTA ROMÁNTICA */
+
+.sobre-contenedor,
+.regalo-contenedor {
+  padding: 25px;
+}
+
+.sobre,
+.regalo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  border: none !important;
+  background: transparent !important;
+}
+
+.sobre span,
+.regalo span {
+  font-size: 100px;
+  filter: drop-shadow(0 0 18px #e88fbe);
+  animation: flotar 3s infinite;
+}
+
+.sobre small,
+.regalo small {
+  font-size: 9px;
+  color: #ffd1eb;
+}
+
+.carta-abierta {
+  width: 100%;
+  max-width: 600px;
+  background: #fbe4ed;
+  border: 5px solid #d68dbb;
+  padding: 35px;
+  box-shadow: 0 0 35px rgba(235, 139, 194, 0.4);
+  animation: aparecer 0.7s ease;
+}
+
+.carta-abierta h3 {
+  color: #843e70;
+}
+
+.carta-abierta p {
+  color: #633852;
+  font-size: 10px;
+}
+
+.carta-abierta .firma {
+  color: #9e4a81;
+  font-weight: bold;
+}
+
+/* SORPRESA FINAL */
+
+.final-romantico {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  animation: aparecer 1s ease;
+}
+
+.final-romantico h3 {
+  color: #ffb6dc;
+}
+
+.freddy-final {
+  width: 160px;
+  max-height: 230px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 25px #ff91c8);
+}
+
+.final-romantico strong {
+  color: #ffb6dc;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+/* ANIMACIONES */
+
+@keyframes flotar {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes interferencia {
+  0%, 100% {
+    opacity: 0.12;
+  }
+  50% {
+    opacity: 0.22;
+  }
+}
+
+@keyframes latido {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.12);
+  }
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 800px) {
+  .contenido-menu {
+    flex-direction: column;
+    padding: 30px 0;
+  }
+
+  .personajes {
+    width: 100%;
+    height: 300px;
+  }
+
+  .personajes .chica-inicio {
+    height: 100%;
+    max-width: 90%;
+    margin-left: 0;
+  }
+
+  .contenido-derecho {
+    width: 100%;
+  }
+
+  .titulo h1 {
+    font-size: clamp(20px, 6vw, 32px);
+  }
+
+  .informacion {
+    font-size: 8px;
+  }
+
+  .botones button {
+    font-size: 9px;
+  }
+
+  .carta-abierta {
+    padding: 20px;
+  }
+
+  .vinilo {
+    width: 45px;
+    height: 45px;
+    min-width: 45px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .estatica,
+  .chica-inicio,
+  .personaje-seccion,
+  .corazon-grande,
+  .sobre span,
+  .regalo span {
+    animation: none !important;
+  }
+}
+
+
+/* ==================================
+   NUESTRA PLAYLIST DE SPOTIFY
+================================== */
+
+.spotify-seccion {
+  width: 100%;
+  max-width: 850px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+
+  text-align: center;
+}
+
+.spotify-seccion h2 {
+  color: #f8c8e8;
+  text-shadow: 3px 3px #853d79;
+  line-height: 1.8;
+}
+
+.spotify-dedicatoria {
+  max-width: 700px;
+
+  color: #f4d0e8;
+  font-size: 10px;
+  line-height: 2.8;
+}
+
+/* MARCO DEL REPRODUCTOR */
+
+.spotify-marco {
+  width: 100%;
+  padding: 18px;
+
+  background: rgba(31, 15, 44, 0.95);
+
+  border: 3px solid #d18fcf;
+  border-radius: 15px;
+
+  box-shadow:
+    0 0 30px rgba(233, 150, 210, 0.3);
+}
+
+/* ENCABEZADO DEL REPRODUCTOR */
+
+.spotify-encabezado {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  margin-bottom: 20px;
+
+  color: #ffb7df;
+  font-size: 9px;
+  line-height: 2;
+}
+
+/* SPOTIFY */
+
+.spotify-marco iframe {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+
+  border: none;
+  border-radius: 12px;
+}
+
+/* TEXTO INFERIOR */
+
+.spotify-pie {
+  margin-top: 20px;
+
+  color: #ffb7df;
+  font-size: 9px;
+  line-height: 2;
+}
+
+.spotify-mensaje {
+  max-width: 700px;
+
+  color: #f4d0e8;
+  font-size: 10px;
+  line-height: 2.8;
+}
+
+/* BOTÓN PARA CONTINUAR */
+
+.spotify-seccion .boton-especial {
+  background: rgba(139, 63, 121, 0.95);
+  border: 2px solid #e4a1d1;
+
+  color: #ffe0f1;
+  font-family: inherit;
+  font-size: 10px;
+  line-height: 1.8;
+
+  padding: 18px 22px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.spotify-seccion .boton-especial:hover {
+  background: #a04c88;
+  box-shadow: 0 0 20px #d77cb9;
+  transform: scale(1.03);
+}
+
+/* ADAPTACIÓN A CELULARES */
+
+@media (max-width: 600px) {
+  .spotify-seccion {
+    gap: 20px;
+  }
+
+  .spotify-marco {
+    padding: 10px;
+  }
+
+  .spotify-encabezado {
+    justify-content: center;
+    font-size: 8px;
+  }
+
+  .spotify-dedicatoria,
+  .spotify-mensaje {
+    font-size: 9px;
+  }
+
+  .spotify-marco iframe {
+    height: 380px;
+  }
+
+  .spotify-seccion .boton-especial {
+    width: 100%;
+    font-size: 9px;
+  }
+}
+
+
+/* ====================================
+   CARTA ROMÁNTICA DE CUMPLEAÑOS
+==================================== */
+
+.carta-seccion {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.carta-invitacion {
+  color: #f8d5ea;
+  font-size: 11px;
+  line-height: 2.5;
+  margin-bottom: 25px;
+}
+
+/* CARTA ABIERTA */
+
+.carta-cumpleanos {
+  width: 100%;
+  max-width: 850px;
+  margin: 25px auto;
+  padding: 35px 40px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #fff1f8,
+      #f8e6ff,
+      #ffe8f2
+    );
+
+  border: 4px double #d58cbd;
+  border-radius: 18px;
+
+  box-shadow:
+    0 0 30px rgba(241, 154, 215, 0.4),
+    0 12px 35px rgba(0, 0, 0, 0.35);
+
+  color: #653c63;
+  animation: aparecer-carta 0.6s ease;
+}
+
+/* TÍTULO DE LA CARTA */
+
+.carta-cumpleanos h3 {
+  color: #a34483;
+  font-size: 15px;
+  line-height: 2.2;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* PÁRRAFOS */
+
+.carta-cumpleanos .carta-texto {
+  max-width: 750px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.carta-cumpleanos .carta-texto p {
+  color: #653c63;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.9;
+  letter-spacing: 0.2px;
+  margin-bottom: 25px;
+  text-align: justify;
+  overflow-wrap: anywhere;
+}
+
+/* FRASES FINALES */
+
+.carta-cumpleanos .carta-texto .carta-cierre {
+  color: #a34483;
+  font-weight: bold;
+  text-align: center;
+  font-size: 18px;
+}
+
+/* CORAZONES DECORATIVOS */
+
+.carta-decoracion {
+  color: #d76aaf;
+  font-size: 25px;
+  margin: 20px 0;
+  letter-spacing: 10px;
+}
+
+/* BOTÓN CERRAR CARTA */
+
+.carta-cerrar {
+  padding: 15px 22px;
+  margin-top: 20px;
+
+  background: #a34f91;
+  border: 2px solid #d58cbd;
+  border-radius: 8px;
+
+  color: #fff;
+  font-family: "Press Start 2P", monospace;
+  font-size: 9px;
+  line-height: 1.8;
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.carta-cerrar:hover {
+  background: #c66cab;
+  transform: scale(1.04);
+}
+
+/* ANIMACIÓN DE APERTURA */
+
+@keyframes aparecer-carta {
+  from {
+    opacity: 0;
+    transform: translateY(25px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* DISEÑO PARA CELULARES */
+
+@media (max-width: 600px) {
+  .carta-cumpleanos {
+    padding: 22px 16px;
+    margin: 15px auto;
+  }
+
+  .carta-cumpleanos h3 {
+    font-size: 11px;
+  }
+
+  .carta-cumpleanos .carta-texto p {
+    font-size: 15px;
+    line-height: 1.8;
+    text-align: left;
+  }
+
+  .carta-cumpleanos .carta-texto .carta-cierre {
+    font-size: 16px;
+  }
+
+  .carta-decoracion {
+    font-size: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carta-cumpleanos {
+    animation: none;
+  }
+}
+
+
+/* ========================================
+   UNA CARTA PARA TI
+======================================== */
+
+.carta-seccion {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.carta-seccion h2 {
+  color: #f8c8e8;
+  text-shadow: 3px 3px #853d79;
+}
+
+/* SOBRE A LA IZQUIERDA
+   ILUSTRACIÓN A LA DERECHA */
+
+.carta-seccion .carta-presentacion {
+  width: 100%;
+  max-width: 1100px;
+  margin: 35px auto;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 45px;
+}
+
+/* COLUMNA DEL SOBRE */
+
+.carta-seccion .carta-presentacion .sobre-contenedor {
+  width: 100%;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+}
+
+.carta-invitacion {
+  max-width: 440px;
+  color: #f8d5ea;
+  font-size: 11px;
+  line-height: 2.5;
+  margin-bottom: 15px;
+}
+
+/* MANTENER EL SOBRE FUNCIONAL */
+
+.carta-seccion .carta-presentacion .sobre {
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+}
+
+/* COLUMNA DE LA ILUSTRACIÓN */
+
+.carta-ilustracion-lateral {
+  width: 100%;
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  pointer-events: none;
+}
+
+/* IMAGEN DE NOSOTROS */
+
+.carta-ilustracion-lateral .imagen-nuestra-carta {
+  display: block;
+  width: 100%;
+  max-width: 430px;
+  height: auto;
+
+  object-fit: contain;
+
+  filter: drop-shadow(
+    0 0 20px rgba(255, 166, 218, 0.35)
+  );
+
+  animation: aparecer-ilustracion 0.8s ease;
+}
+
+/* ========================================
+   CARTA ABIERTA
+======================================== */
+
+.carta-cumpleanos {
+  width: 100%;
+  max-width: 850px;
+  margin: 25px auto;
+  padding: 35px 40px;
+
+  background: linear-gradient(
+    145deg,
+    #fff1f8,
+    #f8e6ff,
+    #ffe8f2
+  );
+
+  border: 4px double #d58cbd;
+  border-radius: 18px;
+
+  box-shadow:
+    0 0 30px rgba(241, 154, 215, 0.4),
+    0 12px 35px rgba(0, 0, 0, 0.35);
+
+  color: #653c63;
+  animation: aparecer-carta 0.6s ease;
+}
+
+.carta-cumpleanos h3 {
+  color: #a34483;
+  font-size: 15px;
+  line-height: 2.2;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* TEXTO COMPLETO DE LA CARTA */
+
+.carta-cumpleanos .carta-texto {
+  max-width: 750px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.carta-cumpleanos .carta-texto p {
+  color: #653c63;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.9;
+  letter-spacing: 0.2px;
+  margin-bottom: 25px;
+  text-align: justify;
+  overflow-wrap: anywhere;
+}
+
+/* FRASES FINALES */
+
+.carta-cumpleanos .carta-texto .carta-cierre {
+  color: #a34483;
+  font-weight: bold;
+  text-align: center;
+  font-size: 18px;
+}
+
+/* CORAZONES DECORATIVOS */
+
+.carta-decoracion {
+  color: #d76aaf;
+  font-size: 25px;
+  margin: 20px 0;
+  letter-spacing: 10px;
+}
+
+/* BOTÓN PARA CERRAR LA CARTA */
+
+.carta-cerrar {
+  padding: 15px 22px;
+  margin-top: 20px;
+
+  background: #a34f91;
+  border: 2px solid #d58cbd;
+  border-radius: 8px;
+
+  color: #fff;
+  font-family: "Press Start 2P", monospace;
+  font-size: 9px;
+  line-height: 1.8;
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.carta-cerrar:hover {
+  background: #c66cab;
+  transform: scale(1.04);
+}
+
+/* ========================================
+   ANIMACIONES
+======================================== */
+
+@keyframes aparecer-ilustracion {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes aparecer-carta {
+  from {
+    opacity: 0;
+    transform: translateY(25px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ========================================
+   RESPONSIVO PARA CELULARES
+======================================== */
+
+@media (max-width: 700px) {
+  .carta-seccion .carta-presentacion {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    margin: 25px auto;
+  }
+
+  .carta-ilustracion-lateral .imagen-nuestra-carta {
+    max-width: 290px;
+  }
+
+  .carta-invitacion {
+    font-size: 9px;
+    line-height: 2.5;
+  }
+
+  .carta-cumpleanos {
+    padding: 22px 16px;
+    margin: 15px auto;
+  }
+
+  .carta-cumpleanos h3 {
+    font-size: 11px;
+  }
+
+  .carta-cumpleanos .carta-texto p {
+    font-size: 15px;
+    line-height: 1.8;
+    text-align: left;
+  }
+
+  .carta-cumpleanos .carta-texto .carta-cierre {
+    font-size: 16px;
+  }
+
+  .carta-decoracion {
+    font-size: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carta-ilustracion-lateral .imagen-nuestra-carta,
+  .carta-cumpleanos {
+    animation: none;
+  }
+}

@@ -1,0 +1,245 @@
+
+/* PANTALLA NUESTRA AVENTURA */
+
+.aventura-pantalla {
+  min-height: 100dvh;
+  padding: 25px 25px 100px;
+
+  background:
+    linear-gradient(
+      rgba(13, 6, 24, 0.88),
+      rgba(22, 9, 35, 0.95)
+    ),
+    url("/imagenes/fondos/fondo-menu.png")
+      center / cover fixed no-repeat;
+
+  color: #f9d6ed;
+  font-family: "Press Start 2P", monospace;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+/* ENCABEZADO */
+
+.aventura-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+
+  font-size: 9px;
+  line-height: 2;
+  color: #f1b5d5;
+}
+
+/* INTRODUCCIÓN */
+
+.aventura-introduccion {
+  max-width: 850px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.aventura-etiqueta {
+  color: #f3b0d7;
+}
+
+.aventura-introduccion h1 {
+  font-size: clamp(20px, 3vw, 35px);
+  line-height: 1.7;
+  color: #f8c8e8;
+  text-shadow: 4px 4px #853d79;
+}
+
+.aventura-introduccion p {
+  font-size: 10px;
+  line-height: 2.5;
+}
+
+/* MARCO DEL VIDEO */
+
+.aventura-marco {
+  width: 100%;
+  max-width: 900px;
+  padding: 15px;
+
+  border: 4px solid #a56c9d;
+  background: rgba(21, 11, 32, 0.95);
+
+  box-shadow:
+    0 0 30px rgba(208, 129, 196, 0.35),
+    inset 0 0 20px #000;
+}
+
+.aventura-marco-superior,
+.aventura-marco-inferior {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+
+  padding: 10px 5px;
+  color: #f5b7df;
+  font-size: 8px;
+  line-height: 2;
+}
+
+.aventura-marco-inferior {
+  justify-content: center;
+}
+
+/* VIDEO */
+
+.aventura-video {
+  display: block;
+  width: 100%;
+  max-height: 65vh;
+  aspect-ratio: 16 / 9;
+
+  background: #08050e;
+  object-fit: contain;
+
+  border: 2px solid #d18fcf;
+  border-radius: 4px;
+}
+
+/* BOTONES */
+
+.aventura-pantalla button {
+  background: rgba(42, 21, 58, 0.95);
+  border: 2px solid #d18fcf;
+  color: #f9d6ed;
+
+  font-family: inherit;
+  font-size: 9px;
+  line-height: 1.8;
+
+  padding: 16px 20px;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.aventura-pantalla button:hover {
+  background: #99568c;
+  box-shadow: 0 0 18px #d77cb9;
+  transform: translateY(-2px);
+}
+
+.aventura-pantalla button:focus-visible {
+  outline: 3px solid white;
+  outline-offset: 3px;
+}
+
+.aventura-controles,
+.aventura-navegacion {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.aventura-navegacion {
+  margin-top: 10px;
+}
+
+.aventura-pantalla .aventura-siguiente {
+  background: #884174;
+}
+
+/* DEDICATORIA */
+
+.aventura-dedicatoria {
+  width: 100%;
+  max-width: 700px;
+
+  padding: 25px;
+  text-align: center;
+
+  background: rgba(57, 28, 66, 0.65);
+  border: 2px solid #9b689a;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.aventura-dedicatoria p {
+  font-size: 10px;
+  line-height: 2.8;
+  color: #f4d5eb;
+}
+
+.aventura-corazon {
+  color: #ff9dce;
+  font-size: 35px;
+  animation: latido-aventura 2s infinite;
+}
+
+.aventura-mensaje-final {
+  color: #ffb2da !important;
+  text-shadow: 0 0 12px #d67eb6;
+}
+
+/* ANIMACIONES */
+
+@keyframes latido-aventura {
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.15);
+  }
+}
+
+/* DISEÑO RESPONSIVO */
+
+@media (max-width: 600px) {
+  .aventura-pantalla {
+    padding: 18px 12px 100px;
+    gap: 22px;
+  }
+
+  .aventura-header {
+    font-size: 7px;
+  }
+
+  .aventura-marco {
+    padding: 8px;
+  }
+
+  .aventura-marco-superior,
+  .aventura-marco-inferior {
+    font-size: 7px;
+  }
+
+  .aventura-introduccion p,
+  .aventura-dedicatoria p {
+    font-size: 9px;
+  }
+
+  .aventura-video {
+    max-height: 55vh;
+  }
+
+  .aventura-pantalla button {
+    width: 100%;
+  }
+
+  .aventura-controles,
+  .aventura-navegacion {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aventura-corazon {
+    animation: none;
+  }
+}

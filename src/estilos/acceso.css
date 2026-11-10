@@ -1,0 +1,240 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+.acceso-romantico {
+  min-height: 100vh;
+  min-height: 100dvh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 15px;
+  overflow: hidden;
+  box-sizing: border-box;
+  background:
+    radial-gradient(
+      ellipse at 25% 30%,
+      #57245b 0%,
+      transparent 45%
+    ),
+    radial-gradient(
+      ellipse at 75% 75%,
+      #30275d 0%,
+      transparent 45%
+    ),
+    linear-gradient(135deg, #10071e, #200d35, #090713);
+  color: #ffe5f3;
+}
+
+.acceso-romantico * {
+  box-sizing: border-box;
+}
+
+.acceso-estrellas {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(2px 2px at 15% 20%, #fff, transparent),
+    radial-gradient(2px 2px at 70% 35%, #ffc6e7, transparent),
+    radial-gradient(2px 2px at 40% 80%, #fff, transparent),
+    radial-gradient(2px 2px at 85% 75%, #f7b7ff, transparent);
+  background-size: 240px 220px;
+  animation: acceso-brillo 5s ease-in-out infinite alternate;
+}
+
+.acceso-tarjeta {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 580px;
+  padding: 42px 30px;
+  text-align: center;
+  border: 2px solid #c17acb;
+  border-radius: 25px;
+  background: rgba(28, 13, 49, 0.94);
+  box-shadow:
+    0 0 35px rgba(230, 113, 209, 0.25),
+    inset 0 0 30px rgba(161, 88, 195, 0.12);
+}
+
+.acceso-etiqueta {
+  color: #eab5f2;
+  font: 9px/2 "Press Start 2P", monospace;
+}
+
+.acceso-corazon {
+  margin: 24px 0;
+  color: #ff95ca;
+  font-size: 85px;
+  line-height: 1;
+  text-shadow: 0 0 30px #ff65b5;
+  animation: acceso-latido 1.8s ease-in-out infinite;
+}
+
+.acceso-tarjeta h1 {
+  color: #ffd2ed;
+  font: clamp(13px, 2.5vw, 20px)/1.9
+    "Press Start 2P", monospace;
+  text-shadow: 0 0 15px #ed7bc5;
+}
+
+.acceso-descripcion,
+.acceso-exito p {
+  color: #eed6f3;
+  font: 16px/1.8 Arial, sans-serif;
+  margin: 20px auto;
+}
+
+.acceso-formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 28px;
+}
+
+.acceso-formulario label {
+  color: #ffd1e9;
+  font: bold 15px/1.7 Arial, sans-serif;
+}
+
+.acceso-formulario input {
+  width: 100%;
+  padding: 17px;
+  border: 2px solid #a66ab9;
+  border-radius: 12px;
+  outline: none;
+  background: #170c2a;
+  color: #fff0fa;
+  text-align: center;
+  font: 16px Arial, sans-serif;
+}
+
+.acceso-formulario input:focus {
+  border-color: #ff9bd2;
+  box-shadow: 0 0 15px #ff85cb55;
+}
+
+.acceso-formulario input::placeholder {
+  color: #a991bb;
+}
+
+.acceso-formulario button,
+.acceso-exito button {
+  padding: 17px 15px;
+  border: 2px solid #ffc3e5;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #873f8c, #bd579d);
+  color: #fff4fc;
+  font: 10px/1.8 "Press Start 2P", monospace;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.acceso-formulario button:hover,
+.acceso-exito button:hover {
+  transform: translateY(-3px);
+  background: #cc63aa;
+}
+
+.acceso-error {
+  color: #ffb6ce;
+  font: 14px/1.7 Arial, sans-serif;
+}
+
+.acceso-pista {
+  margin-top: 25px;
+  color: #cdaedb;
+  font: 12px/1.7 Arial, sans-serif;
+}
+
+.acceso-exito {
+  animation: acceso-aparecer 0.7s ease;
+}
+
+.acceso-exito button {
+  margin-top: 15px;
+}
+
+@keyframes acceso-latido {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.12);
+  }
+}
+
+@keyframes acceso-brillo {
+  to {
+    opacity: 0.45;
+  }
+}
+
+@keyframes acceso-aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .acceso-tarjeta {
+    padding: 30px 18px;
+  }
+
+  .acceso-corazon {
+    font-size: 65px;
+  }
+
+  .acceso-formulario button,
+  .acceso-exito button {
+    font-size: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .acceso-romantico *,
+  .acceso-romantico *::before,
+  .acceso-romantico *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+
+/* IMAGEN DE CUMPLEAÑOS FNAF */
+
+.acceso-imagen-cumple {
+  width: 100%;
+  max-width: 420px;
+  margin: 22px auto;
+  overflow: hidden;
+  border: 2px solid #e998d4;
+  border-radius: 18px;
+  box-shadow:
+    0 0 15px rgba(255, 130, 205, 0.45),
+    0 0 35px rgba(194, 91, 205, 0.2);
+}
+
+.acceso-imagen-cumple img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.4s ease;
+}
+
+.acceso-imagen-cumple:hover img {
+  transform: scale(1.04);
+}
+
+@media (max-width: 600px) {
+  .acceso-imagen-cumple {
+    max-width: 100%;
+    margin: 18px auto;
+  }
+}

@@ -1,0 +1,458 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+/* CONFIGURACIÓN GENERAL */
+
+.sorpresa-universo {
+  position: relative;
+  min-height: 100vh;
+  background: #000;
+  color: #ffe5f1;
+  overflow-x: hidden;
+  padding: 20px 18px 65px;
+  box-sizing: border-box;
+}
+
+.sorpresa-universo * {
+  box-sizing: border-box;
+}
+
+.sorpresa-universo button {
+  cursor: pointer;
+}
+
+/* BARRA SUPERIOR */
+
+.sorpresa-barra {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  max-width: 1150px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  font: 9px/1.8 "Press Start 2P", monospace;
+  color: #ffb7d5;
+}
+
+.sorpresa-barra button {
+  background: #240b1b;
+  color: #ffd8e9;
+  border: 1px solid #ed79a7;
+  border-radius: 9px;
+  padding: 12px 15px;
+  font: inherit;
+}
+
+.sorpresa-barra button:hover {
+  background: #60213e;
+}
+
+/* ENCABEZADO DE LA GALAXIA */
+
+.galaxia-pantalla {
+  width: 100%;
+  text-align: center;
+}
+
+.galaxia-encabezado {
+  position: relative;
+  z-index: 3;
+  padding-top: 28px;
+  pointer-events: none;
+}
+
+.sorpresa-etiqueta {
+  color: #ffa7ca;
+  font: 9px/2 "Press Start 2P", monospace;
+}
+
+.galaxia-encabezado h1,
+.sorpresa-panel h1 {
+  color: #ffbad8;
+  font:
+    clamp(15px, 2.5vw, 25px)/1.7
+    "Press Start 2P", monospace;
+  text-shadow: 0 0 20px #ff477e;
+}
+
+.galaxia-encabezado > p:last-child {
+  color: #ffcadf;
+  font: 16px/1.7 Arial, sans-serif;
+  margin: 10px auto 0;
+  max-width: 750px;
+}
+
+/* GALAXIA ANIMADA */
+
+.galaxia-animada {
+  position: relative;
+  width: 100%;
+  height: min(78vh, 720px);
+  min-height: 520px;
+  margin: 0 auto;
+  overflow: hidden;
+  background: #000;
+}
+
+.galaxia-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* ZONA DE LAS 22 RAZONES */
+
+.galaxia-frases {
+  position: absolute;
+  z-index: 3;
+  bottom: 3%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(90%, 650px);
+  padding: 16px 20px;
+  border: 1px solid rgba(255, 96, 149, 0.55);
+  border-radius: 18px;
+  background: rgba(20, 0, 12, 0.83);
+  box-shadow: 0 0 25px rgba(255, 38, 95, 0.25);
+  backdrop-filter: blur(5px);
+  pointer-events: none;
+}
+
+.galaxia-frases-titulo {
+  margin: 0 0 13px;
+  color: #ff9ac4;
+  font: 9px/1.8 "Press Start 2P", monospace;
+}
+
+.galaxia-razon {
+  min-height: 85px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.galaxia-numero {
+  color: #ff79b0;
+  font: 9px/1.8 "Press Start 2P", monospace;
+}
+
+.galaxia-razon p {
+  color: #ffe4f0;
+  font: bold clamp(15px, 2vw, 19px)/1.6
+    Arial, sans-serif;
+  margin: 9px 0 0;
+  text-shadow: 0 0 12px #ff4788;
+}
+
+/* PORTAL SECRETO */
+
+.portal-desbloqueado {
+  position: relative;
+  z-index: 4;
+  max-width: 780px;
+  margin: 12px auto 30px;
+  padding: 20px;
+  border: 1px solid #ff77ae;
+  border-radius: 18px;
+  background: #260b1c;
+  animation: aparecer-portal 0.8s ease;
+}
+
+.portal-desbloqueado > p:first-child {
+  color: #ffd2e7;
+  font: 11px/2 "Press Start 2P", monospace;
+}
+
+.portal-mensaje {
+  color: #ffc3dc;
+  font: 16px/1.7 Arial, sans-serif;
+}
+
+.galaxia-espera {
+  color: #ff94be;
+  font: 9px/2 "Press Start 2P", monospace;
+}
+
+/* BOTONES */
+
+.sorpresa-boton {
+  display: inline-block;
+  max-width: 100%;
+  margin: 12px 6px;
+  padding: 16px 20px;
+  background: linear-gradient(135deg, #8e2456, #bc4378);
+  color: #fff1f8;
+  border: 2px solid #ffc1dc;
+  border-radius: 12px;
+  box-shadow: 0 0 22px #ff458066;
+  font: 10px/1.9 "Press Start 2P", monospace;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.sorpresa-boton:hover {
+  background: #d1538b;
+  transform: translateY(-3px);
+}
+
+.sorpresa-boton.secundario {
+  background: #2c172b;
+}
+
+/* PANELES DE FIESTA Y FINAL */
+
+.sorpresa-panel {
+  width: 100%;
+  max-width: 1050px;
+  min-height: 580px;
+  margin: 35px auto;
+  padding: 35px 20px;
+  text-align: center;
+  border: 2px solid #8f4272;
+  border-radius: 22px;
+  box-shadow: 0 0 35px #ad286055;
+}
+
+/* FIESTA OSCURA */
+
+.fiesta-oscura {
+  background: #070408;
+}
+
+.fiesta-oscura h1 {
+  color: #c0a6b7;
+  text-shadow: none;
+}
+
+.fiesta-interruptor {
+  font-size: 95px;
+  margin: 75px auto 30px;
+  filter: grayscale(1) brightness(0.55);
+}
+
+.fiesta-instruccion {
+  font: 17px/1.8 Arial, sans-serif;
+  color: #e4c8d9;
+}
+
+/* FIESTA ILUMINADA */
+
+.fiesta-iluminada {
+  background:
+    radial-gradient(circle at top, #a63f79, transparent 65%),
+    linear-gradient(135deg, #361433, #20112e);
+  animation: aparecer-portal 0.8s ease;
+}
+
+.fiesta-globos {
+  font-size: clamp(35px, 7vw, 70px);
+  margin: 20px 0;
+}
+
+.fiesta-edad {
+  color: #ffd5e7;
+  font: 12px/2 "Press Start 2P", monospace;
+}
+
+.fiesta-confeti {
+  font-size: 25px;
+  animation: confeti-movimiento 3s ease-in-out infinite alternate;
+}
+
+/* FREDDY, BONNIE Y CHICA */
+
+.fiesta-personajes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin: 30px auto;
+}
+
+.fiesta-personaje {
+  min-width: 0;
+  padding: 18px;
+  border: 1px solid #ed91bb;
+  border-radius: 16px;
+  background: rgba(29, 9, 31, 0.85);
+  box-shadow: 0 0 16px #ed5e9940;
+}
+
+.fiesta-personaje img {
+  width: 100%;
+  height: 210px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 12px #ff7db066);
+}
+
+.fiesta-personaje h3 {
+  color: #ffbad7;
+  font: 11px/1.8 "Press Start 2P", monospace;
+}
+
+.fiesta-personaje p {
+  color: #ffe3f0;
+  font: 15px/1.8 Arial, sans-serif;
+}
+
+.fiesta-ultimo-regalo {
+  margin: 28px auto;
+}
+
+.fiesta-ultimo-regalo p {
+  color: #ffc2df;
+  font: 11px/2 "Press Start 2P", monospace;
+}
+
+/* FINAL VERDADERO */
+
+.final-panel {
+  max-width: 850px;
+  background:
+    radial-gradient(circle at top, #60214e, transparent 65%),
+    #120716;
+}
+
+.final-ilustracion {
+  width: 100%;
+  max-width: 540px;
+  margin: 25px auto;
+}
+
+.final-ilustracion img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 0 25px #ff83ba88);
+  animation: ilustracion-flotar 4s ease-in-out infinite;
+}
+
+.final-dedicatoria {
+  margin: 25px auto;
+  padding: 25px;
+  color: #ffe0ed;
+  background: rgba(43, 13, 39, 0.85);
+  border: 1px solid #f49fc4;
+  border-radius: 18px;
+  font: 19px/1.9 Arial, sans-serif;
+  box-shadow: 0 0 20px #ff6eaa33;
+}
+
+.final-continuara {
+  color: #ffb8d5;
+  font: 12px/2 "Press Start 2P", monospace;
+}
+
+.final-acciones {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* ANIMACIONES */
+
+@keyframes aparecer-portal {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes confeti-movimiento {
+  from {
+    transform: translateY(-8px) rotate(-3deg);
+  }
+
+  to {
+    transform: translateY(15px) rotate(3deg);
+  }
+}
+
+@keyframes ilustracion-flotar {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 700px) {
+  .sorpresa-universo {
+    padding: 15px 10px 45px;
+  }
+
+  .sorpresa-barra {
+    font-size: 7px;
+  }
+
+  .galaxia-encabezado h1,
+  .sorpresa-panel h1 {
+    font-size: 15px;
+  }
+
+  .galaxia-encabezado > p:last-child {
+    font-size: 14px;
+  }
+
+  .galaxia-animada {
+    height: 610px;
+    min-height: 0;
+  }
+
+  .galaxia-frases {
+    width: 94%;
+    bottom: 2%;
+    padding: 14px 10px;
+  }
+
+  .galaxia-frases-titulo {
+    font-size: 8px;
+  }
+
+  .galaxia-razon p {
+    font-size: 15px;
+  }
+
+  .fiesta-personajes {
+    grid-template-columns: 1fr;
+  }
+
+  .fiesta-personaje img {
+    height: 180px;
+  }
+
+  .sorpresa-panel {
+    padding: 25px 12px;
+  }
+
+  .final-dedicatoria {
+    font-size: 16px;
+    padding: 18px;
+  }
+
+  .sorpresa-boton {
+    font-size: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sorpresa-universo *,
+  .sorpresa-universo *::before,
+  .sorpresa-universo *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

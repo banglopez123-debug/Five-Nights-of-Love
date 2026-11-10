@@ -1,0 +1,41 @@
+
+.boton-musica {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+
+  background: rgba(35, 17, 49, 0.95);
+  border: 2px solid #d18fcf;
+  color: #f9d6ed;
+
+  padding: 14px 18px;
+  border-radius: 6px;
+
+  font-family: 'Press Start 2P', monospace;
+  font-size: 9px;
+  line-height: 1.8;
+
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.boton-musica:hover {
+  background: #a04c88;
+  box-shadow: 0 0 20px #d77cb9;
+  transform: scale(1.05);
+}
+
+.boton-musica:focus-visible {
+  outline: 3px solid white;
+  outline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+  .boton-musica {
+    bottom: 12px;
+    right: 12px;
+    padding: 12px;
+    font-size: 8px;
+  }
+}
